@@ -100,4 +100,57 @@ u.save()
 
     * Django looks at the request URL and look aturls.py to select a view
 
-    * 
+    * three patterns for views (in urls.py)
+
+    URL dispather (routing)
+
+    1. route to predefined class
+    2. route to a fucntion in views.py
+    3. route to a class in views that has get() and post()
+
+    cross-site scripting:
+        solution: django.utils.html.escape
+
+
+3. http status codes
+    * 200: OK
+
+    * 404: not found
+
+
+# template
+
+1. one or more applications in folders
+
+2. render data + render template ==> render output
+
+3. template tags/code
+
+    * subsititution
+
+        {{ zap }}: automatic escape
+
+        {{zap|safe}}: not escape
+
+    * Callling mode
+
+        it has some function
+
+
+4. template inheritance
+
+    * extends
+
+    * block 
+
+
+5. reverse urls
+urlpatterns = [
+    path("cats",views.catViews.as.view(),name = "cats"),
+    path("cat/<int:pk_from_url>}",views.catViewDetial.as.view(),name = "cat"),
+    
+]
+
+
+# Generic views
+

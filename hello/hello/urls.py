@@ -15,7 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
+from django.views.generic import TemplateView
+
+app_naems = "views"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # pre-defined class from django
+    #path("",TemplateView.as_view(template_name = 'views/main.html'))
+
+    # function from 
+    path('funky',views.funky),
+    path('danger',views.danger),
+    path("rest/<int:guess>",views.rest),
+    path('main',views.MainView.as_view()),
+    path("remain/<slug:guess>",views.RemainView.as_view())
+
 ]

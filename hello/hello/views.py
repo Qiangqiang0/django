@@ -52,3 +52,18 @@ class RemainView(View):
         '''</p></body>
         '''
         return(HttpResponse(response))
+
+# 6) template
+# pleas modify the templates dir in settings
+class GameView(View):
+    def get(self,request,guess):
+        x = {"guess" : int(guess)}
+        return render(request,'tmpl/cond.html',x)
+
+
+# 6) blcok
+
+class GameView2(View):
+    def get(self,request,guess):
+        x = {"guess" : int(guess)}
+        return render(request,"tmpl/block.html",x)

@@ -14,11 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from . import views
 from django.views.generic import TemplateView
 
-app_naems = "views"
+# app_name = "gview"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,7 +30,14 @@ urlpatterns = [
     path('funky',views.funky),
     path('danger',views.danger),
     path("rest/<int:guess>",views.rest),
+    # class
     path('main',views.MainView.as_view()),
-    path("remain/<slug:guess>",views.RemainView.as_view())
+    path("remain/<slug:guess>",views.RemainView.as_view()),
+    path('tmpl/<int:guess>',views.GameView.as_view()),
+    path('tmplb/<int:guess>',views.GameView2.as_view()),
+    # givew from app
+    path("gview123/",include("gview.urls",namespace = "gview_test")),
+    path("forms/",include("forms.urls"))
+
 
 ]

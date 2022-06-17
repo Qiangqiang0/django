@@ -1,0 +1,8 @@
+{% extends "tmpl/base.html" %}
+
+{% block content %}
+        <p> block cotent: your guess is {{ guess }}</p>
+        {% if guess < 42 %}
+        <p> too low</p>
+        {% endif %}
+{% endblock %}

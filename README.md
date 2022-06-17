@@ -132,10 +132,19 @@ u.save()
 
         {{zap|safe}}: not escape
 
-    * Callling mode
+   * Callling mode
+
+        {% url 'cat-deatial' cat.id %}
 
         it has some function
 
+    * logic
+    {% if zap > 100 %}
+    {% endif %}
+
+    * blocks
+
+    {% blocks %}
 
 4. template inheritance
 
@@ -145,12 +154,21 @@ u.save()
 
 
 5. reverse urls
+r
 urlpatterns = [
     path("cats",views.catViews.as.view(),name = "cats"),
     path("cat/<int:pk_from_url>}",views.catViewDetial.as.view(),name = "cat"),
-    
 ]
-
-
 # Generic views
 
+
+# forms 
+1. get
+
+
+2. post
+
+
+3. refresh
+
+set cookie, what, how?
